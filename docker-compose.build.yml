@@ -1,0 +1,9 @@
+# Construir las imágenes localmente en vez de descargarlas de GHCR:
+#   docker compose -f docker-compose.yml -f docker-compose.build.yml up --build
+services:
+  api:
+    build: { context: ., dockerfile: apps/api/Dockerfile }
+  web:
+    build: { context: ., dockerfile: apps/web/Dockerfile, args: { API_INTERNAL_URL: 'http://api:3001' } }
+  backup:
+    build: ./deploy/backup

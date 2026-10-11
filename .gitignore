@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.test-dist/
+.next/
+out/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+!deploy/.env.example
+!apps/api/.env.example
+apps/api/.env.development
+backups/
+*.log
+.DS_Store
+coverage/

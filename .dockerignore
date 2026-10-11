@@ -1,0 +1,9 @@
+**/node_modules
+**/.next
+**/dist
+**/.test-dist
+**/.env*
+!deploy/.env.example
+.git
+backups
+*.log

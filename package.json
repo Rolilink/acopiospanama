@@ -1,0 +1,11 @@
+{
+  "name": "acopiospanama",
+  "private": true,
+  "workspaces": ["apps/api", "apps/web"],
+  "scripts": {
+    "build": "npm run build -w apps/api && npm run build -w apps/web",
+    "test": "npm run test -w apps/api"
+  },
+  "overrides": { "deepmerge-ts": "^8.0.0" },
+  "engines": { "node": ">=22" }
+}

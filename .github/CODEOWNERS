@@ -1,0 +1,6 @@
+# Revisión obligatoria en lo sensible (privacidad, seguridad, despliegue).
+*                         @demogar
+/apps/api/src/auth/       @demogar
+/apps/api/migrations/     @demogar
+/.github/                 @demogar
+/docker-compose.yml       @demogar

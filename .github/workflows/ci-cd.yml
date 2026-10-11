@@ -1,0 +1,156 @@
+# CI en cada pull request; al fusionar en main: imágenes a GHCR y despliegue en Coolify.
+#
+# Seguridad para un repo abierto:
+#  - Los PR (también de forks) corren SIN secretos y con permisos de solo lectura.
+#  - Publicar y desplegar solo ocurre en `push` a main (tras revisión y CI verde).
+#  - Nunca se usa `pull_request_target`.
+name: CI/CD
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  api:
+    name: API · tipos y pruebas
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: acopio
+          POSTGRES_PASSWORD: acopio
+          POSTGRES_DB: acopio_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U acopio -d acopio_test"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      TEST_DATABASE_URL: postgresql://acopio:acopio@localhost:5432/acopio_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck -w apps/api
+      - run: npm run build -w apps/api
+      - run: npm test -w apps/api
+
+  web:
+    name: Web · tipos y build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck -w apps/web
+      - run: npm run build -w apps/web
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
+
+  audit:
+    name: Dependencias
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm audit --audit-level=high
+
+  images:
+    name: Imágenes Docker
+    needs: [api, web, audit]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        include:
+          - name: api
+            dockerfile: apps/api/Dockerfile
+            context: .
+          - name: web
+            dockerfile: apps/web/Dockerfile
+            context: .
+          - name: backup
+            dockerfile: deploy/backup/Dockerfile
+            context: deploy/backup
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: Login a GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/acopiospanama-${{ matrix.name }}
+          tags: |
+            type=sha,format=long
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.dockerfile }}
+          # En PR solo se construye (verifica que el Dockerfile funciona); en main se publica.
+          push: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=${{ matrix.name }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.name }}
+
+  deploy:
+    name: Desplegar en Coolify
+    needs: [images]
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Entorno con protección opcional (revisores obligatorios) en Settings › Environments.
+    environment: production
+    steps:
+      - name: Disparar despliegue
+        env:
+          COOLIFY_WEBHOOK_URL: ${{ secrets.COOLIFY_WEBHOOK_URL }}
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          if [ -z "$COOLIFY_WEBHOOK_URL" ] || [ -z "$COOLIFY_TOKEN" ]; then
+            echo "::warning::Faltan COOLIFY_WEBHOOK_URL / COOLIFY_TOKEN: las imágenes se publicaron, pero no se desplegó."
+            exit 0
+          fi
+          curl --fail --silent --show-error --max-time 60 \
+            -H "Authorization: Bearer $COOLIFY_TOKEN" \
+            "$COOLIFY_WEBHOOK_URL"
+      - name: Verificar que responde
+        env:
+          PUBLIC_URL: ${{ vars.PUBLIC_URL }}
+        run: |
+          if [ -z "$PUBLIC_URL" ]; then echo "Sin PUBLIC_URL (variable del repo): se omite la verificación."; exit 0; fi
+          for i in $(seq 1 30); do
+            if curl --fail --silent --max-time 10 "$PUBLIC_URL/api/health" > /dev/null; then echo "OK"; exit 0; fi
+            sleep 10
+          done
+          echo "::error::$PUBLIC_URL/api/health no respondió en 5 minutos"; exit 1

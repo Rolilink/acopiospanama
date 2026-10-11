@@ -1,0 +1,95 @@
+# Acopio Panamá — producción con Docker Compose (pensado para Coolify).
+#
+# Las imágenes se construyen en GitHub Actions y se publican en GHCR: el servidor NO compila
+# (así convive con otras apps en un VPS pequeño). Para construir localmente:
+#   docker compose -f docker-compose.yml -f docker-compose.build.yml up --build
+#
+# Solo `web` recibe tráfico (asigna el dominio a web:3000 en Coolify). API y base de datos son internas.
+# Variables: ver deploy/.env.example. Los límites de CPU/memoria evitan que un pico afecte a otras apps.
+
+x-hardening: &hardening
+  restart: unless-stopped
+  security_opt: ['no-new-privileges:true']
+  cap_drop: ['ALL']
+  logging:
+    driver: json-file
+    options: { max-size: '10m', max-file: '3' }
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    command: ['postgres', '-c', 'shared_buffers=64MB', '-c', 'max_connections=40', '-c', 'work_mem=4MB']
+    environment:
+      POSTGRES_DB: acopio
+      POSTGRES_USER: acopio
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD}
+      POSTGRES_INITDB_ARGS: '--auth-host=scram-sha-256'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U acopio -d acopio']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    mem_limit: 256m
+    cpus: 0.5
+    security_opt: ['no-new-privileges:true']
+
+  api:
+    <<: *hardening
+    image: ghcr.io/${GHCR_OWNER:-demogar}/acopiospanama-api:${IMAGE_TAG:-latest}
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      NODE_ENV: production
+      PORT: '3001'
+      DATABASE_URL: postgresql://acopio:${POSTGRES_PASSWORD}@db:5432/acopio
+      APP_ORIGIN: ${APP_ORIGIN:?Define APP_ORIGIN (https://tu-dominio)}
+      SECRET_KEY: ${SECRET_KEY:?Define SECRET_KEY}
+      MAIL_MODE: smtp
+      SMTP_URL: ${SMTP_URL:?Define SMTP_URL}
+      MAIL_FROM: ${MAIL_FROM:?Define MAIL_FROM}
+      TRUST_PROXY: ${TRUST_PROXY:-1}
+      TZ: America/Panama
+      NODE_OPTIONS: --max-old-space-size=256
+    read_only: true
+    tmpfs: ['/tmp']
+    mem_limit: 384m
+    cpus: 0.75
+
+  web:
+    <<: *hardening
+    image: ghcr.io/${GHCR_OWNER:-demogar}/acopiospanama-web:${IMAGE_TAG:-latest}
+    depends_on:
+      api: { condition: service_healthy }
+    environment:
+      TZ: America/Panama
+      API_INTERNAL_URL: http://api:3001
+      MAP_TILE_HOST: ${MAP_TILE_HOST:-https://tile.openstreetmap.org}
+      NODE_OPTIONS: --max-old-space-size=256
+    read_only: true
+    tmpfs: ['/tmp', '/app/apps/web/.next/cache']
+    expose: ['3000']
+    mem_limit: 384m
+    cpus: 0.75
+
+  backup:
+    restart: unless-stopped
+    image: ghcr.io/${GHCR_OWNER:-demogar}/acopiospanama-backup:${IMAGE_TAG:-latest}
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      PGHOST: db
+      PGUSER: acopio
+      PGDATABASE: acopio
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      AGE_RECIPIENT: ${BACKUP_AGE_RECIPIENT:?Define BACKUP_AGE_RECIPIENT (clave pública age)}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-14}
+    volumes:
+      - ./backups:/backups
+    mem_limit: 128m
+    security_opt: ['no-new-privileges:true']
+
+volumes:
+  pgdata:

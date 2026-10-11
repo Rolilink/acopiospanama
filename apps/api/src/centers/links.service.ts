@@ -1,0 +1,162 @@
+import { Inject, Injectable, Logger } from '@nestjs/common';
+import { createHmac, hkdfSync } from 'node:crypto';
+import { sql } from 'kysely';
+import { AuditService } from '../audit/audit.service';
+import { CONFIG, DATABASE } from '../common/core.module';
+import { safeEqual } from '../common/crypto';
+import { ApiError } from '../common/http';
+import type { AppConfig } from '../config';
+import type { DB } from '../db/db';
+import { MailService } from '../mail/mail.service';
+import { CentersService } from './centers.service';
+
+const TOKEN_DAYS = 7;
+const REMIND_AFTER_HOURS = 48;
+const REPORT_NOTICE_GAP_HOURS = 6;
+
+/**
+ * Enlaces firmados de un solo propósito para los correos: «¿sigue funcionando?» con un toque.
+ * No inician sesión ni dan acceso a nada más: solo confirman o cierran ese centro.
+ */
+@Injectable()
+export class LinksService {
+  private readonly logger = new Logger('Links');
+  private readonly key: Buffer;
+  private readonly lastReportNotice = new Map<string, number>();
+
+  constructor(
+    @Inject(DATABASE) private readonly db: DB,
+    @Inject(CONFIG) private readonly config: AppConfig,
+    private readonly centers: CentersService,
+    private readonly audit: AuditService,
+    private readonly mail: MailService,
+  ) {
+    this.key = Buffer.from(hkdfSync('sha256', Buffer.from(config.SECRET_KEY), Buffer.from('acopio-panama'), Buffer.from('confirm-link-v1'), 32));
+  }
+
+  makeToken(centerId: string, userId: string): string {
+    const payload = Buffer.from(JSON.stringify({ c: centerId, u: userId, e: Date.now() + TOKEN_DAYS * 86_400_000 })).toString('base64url');
+    const sig = createHmac('sha256', this.key).update(payload).digest('base64url');
+    return `${payload}.${sig}`;
+  }
+
+  private verify(token: string): { c: string; u: string } {
+    const [payload, sig] = token.split('.');
+    const bad = () => new ApiError(400, 'BAD_LINK', 'El enlace no es válido o ya venció. Entra con tu correo para actualizar el centro.');
+    if (!payload || !sig) throw bad();
+    const expected = createHmac('sha256', this.key).update(payload).digest('base64url');
+    if (!safeEqual(sig, expected)) throw bad();
+    let data: { c: string; u: string; e: number };
+    try {
+      data = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8'));
+    } catch {
+      throw bad();
+    }
+    if (!data.e || data.e < Date.now()) throw bad();
+    return data;
+  }
+
+  private async load(token: string) {
+    const { c, u } = this.verify(token);
+    const row = await this.db
+      .selectFrom('centers')
+      .innerJoin('centerManagers', 'centerManagers.centerId', 'centers.id')
+      .innerJoin('users', 'users.id', 'centerManagers.userId')
+      .select(['centers.id', 'centers.name', 'centers.slug', 'centers.status', 'users.disabledAt'])
+      .where('centers.id', '=', c)
+      .where('centerManagers.userId', '=', u)
+      .executeTakeFirst();
+    if (!row || row.disabledAt || row.status === 'REMOVED') {
+      throw new ApiError(400, 'BAD_LINK', 'El enlace no es válido o ya venció. Entra con tu correo para actualizar el centro.');
+    }
+    return { ...row, userId: u };
+  }
+
+  async peekToken(token: string) {
+    const r = await this.load(token);
+    return { name: r.name, slug: r.slug, status: r.status };
+  }
+
+  async useToken(token: string, action: 'CONFIRM' | 'CLOSE') {
+    const r = await this.load(token);
+    if (action === 'CONFIRM') {
+      if (r.status !== 'PUBLISHED') throw new ApiError(409, 'NOT_OPEN', 'Este centro está cerrado. Entra con tu correo si quieres reabrirlo.');
+      await this.db.updateTable('centers').set({ managerConfirmedAt: new Date() }).where('id', '=', r.id).execute();
+      await this.audit.log({ actorId: r.userId, action: 'center.confirmed_link', objectType: 'center', objectId: r.id });
+    } else {
+      await this.db.updateTable('centers').set({ status: 'CLOSED', closedAt: new Date(), updatedAt: new Date() }).where('id', '=', r.id).execute();
+      await this.audit.log({ actorId: r.userId, action: 'center.closed_link', objectType: 'center', objectId: r.id });
+    }
+    this.centers.invalidate();
+    return { ok: true, name: r.name, slug: r.slug, action };
+  }
+
+  /** Recordatorio a responsables de centros sin confirmar en 48 h (como mucho uno cada 48 h). */
+  async sendReminders() {
+    const mail = this.mail;
+    const due = await this.db
+      .selectFrom('centers')
+      .select(['id', 'name', 'slug'])
+      .where('status', '=', 'PUBLISHED')
+      .where('managerConfirmedAt', '<', sql<Date>`now() - make_interval(hours => ${REMIND_AFTER_HOURS})`)
+      .where((eb) => eb.or([eb('lastReminderAt', 'is', null), eb('lastReminderAt', '<', sql<Date>`now() - make_interval(hours => ${REMIND_AFTER_HOURS})`)]))
+      .limit(500)
+      .execute();
+    let sent = 0;
+    for (const c of due) {
+      const managers = await this.db
+        .selectFrom('centerManagers')
+        .innerJoin('users', 'users.id', 'centerManagers.userId')
+        .select(['users.id', 'users.email'])
+        .where('centerManagers.centerId', '=', c.id)
+        .where('users.disabledAt', 'is', null)
+        .execute();
+      for (const m of managers) {
+        const link = `${this.config.appOrigin}/confirmar?t=${encodeURIComponent(this.makeToken(c.id, m.id))}`;
+        const ok = await mail.send({
+          to: m.email,
+          subject: `¿«${c.name}» sigue recibiendo donaciones?`,
+          text: [
+            `Eres responsable de «${c.name}» en Acopio Panamá.`,
+            '',
+            'Para que la gente no llegue a un centro cerrado, confírmanos que sigue funcionando (un toque):',
+            link,
+            '',
+            'Si ya cerró, en ese mismo enlace puedes marcarlo como cerrado. Para cambiar lo que necesitan, entra en',
+            `${this.config.appOrigin}/mis-centros`,
+            '',
+            'Si nadie lo confirma, el centro deja de mostrarse automáticamente en unos días.',
+          ].join('\n'),
+        });
+        if (ok) sent++;
+      }
+      await this.db.updateTable('centers').set({ lastReminderAt: new Date() }).where('id', '=', c.id).execute();
+    }
+    return { centers: due.length, sent };
+  }
+
+  /** Aviso genérico a los responsables cuando alguien reporta su centro (como mucho uno cada 6 h). */
+  async notifyManagersOfReport(centerId: string) {
+    const mail = this.mail;
+    const last = this.lastReportNotice.get(centerId);
+    if (last && Date.now() - last < REPORT_NOTICE_GAP_HOURS * 3_600_000) return;
+    this.lastReportNotice.set(centerId, Date.now());
+    if (this.lastReportNotice.size > 10_000) this.lastReportNotice.clear();
+    const c = await this.db.selectFrom('centers').select(['name']).where('id', '=', centerId).executeTakeFirst();
+    if (!c) return;
+    const managers = await this.db
+      .selectFrom('centerManagers')
+      .innerJoin('users', 'users.id', 'centerManagers.userId')
+      .select('users.email')
+      .where('centerManagers.centerId', '=', centerId)
+      .where('users.disabledAt', 'is', null)
+      .execute();
+    for (const m of managers) {
+      await mail.send({
+        to: m.email,
+        subject: `Alguien reportó «${c.name}»`,
+        text: `Una persona reportó un problema con «${c.name}» en Acopio Panamá. Revisa que la información esté al día en ${this.config.appOrigin}/mis-centros\n\nSi varias personas lo reportan, el centro se marca o se oculta automáticamente.`,
+      });
+    }
+  }
+}
