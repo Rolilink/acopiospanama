@@ -435,8 +435,8 @@ function CenterList({
     <ul
       className={
         showMap
-          ? 'grid gap-3 md:grid-cols-2 2xl:grid-cols-3'
-          : 'grid gap-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'
+          ? 'grid gap-4 md:grid-cols-2 2xl:grid-cols-3'
+          : 'grid gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'
       }
     >
       {rows.map(({ c, km }) => (
