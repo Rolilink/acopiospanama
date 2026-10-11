@@ -1,4 +1,4 @@
-# CI en cada pull request; al fusionar en main: imágenes a GHCR y despliegue en Coolify.
+# CI en cada pull request; al fusionar en main: imágenes a GHCR y despliegue en el VPS por SSH.
 #
 # Seguridad para un repo abierto:
 #  - Los PR (también de forks) corren SIN secretos y con permisos de solo lectura.
@@ -124,26 +124,43 @@ jobs:
           cache-to: type=gha,mode=max,scope=${{ matrix.name }}
 
   deploy:
-    name: Desplegar en Coolify
+    name: Desplegar en el VPS
     needs: [images]
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     # Entorno con protección opcional (revisores obligatorios) en Settings › Environments.
+    # Los secretos y variables DEPLOY_* viven en ese entorno: solo main puede usarlos.
     environment: production
+    permissions:
+      contents: read
+      packages: read
     steps:
-      - name: Disparar despliegue
+      - uses: actions/checkout@v4
+      - name: Preparar SSH
         env:
-          COOLIFY_WEBHOOK_URL: ${{ secrets.COOLIFY_WEBHOOK_URL }}
-          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ vars.DEPLOY_KNOWN_HOSTS }}
         run: |
-          if [ -z "$COOLIFY_WEBHOOK_URL" ] || [ -z "$COOLIFY_TOKEN" ]; then
-            echo "::warning::Faltan COOLIFY_WEBHOOK_URL / COOLIFY_TOKEN: las imágenes se publicaron, pero no se desplegó."
-            exit 0
+          if [ -z "$DEPLOY_SSH_KEY" ] || [ -z "$DEPLOY_KNOWN_HOSTS" ]; then
+            echo "::warning::Faltan DEPLOY_SSH_KEY / DEPLOY_KNOWN_HOSTS: las imágenes se publicaron, pero no se desplegó."
+            echo "omitir=1" >> "$GITHUB_ENV"; exit 0
           fi
-          curl --fail --silent --show-error --max-time 60 \
-            -H "Authorization: Bearer $COOLIFY_TOKEN" \
-            "$COOLIFY_WEBHOOK_URL"
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          printf 'Host vps\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/deploy\n  IdentitiesOnly yes\n' \
+            "${{ vars.DEPLOY_HOST }}" "${{ vars.DEPLOY_USER }}" > ~/.ssh/config
+      - name: Copiar compose, Caddyfile y script
+        if: env.omitir != '1'
+        run: |
+          scp -q docker-compose.yml vps:/opt/acopiospanama/docker-compose.yml
+          scp -q deploy/Caddyfile deploy/desplegar.sh vps:/opt/acopiospanama/deploy/
+      - name: Actualizar contenedores
+        if: env.omitir != '1'
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | ssh vps \
+            "GHCR_USER='${{ github.actor }}' IMAGE_TAG='sha-${{ github.sha }}' bash /opt/acopiospanama/deploy/desplegar.sh"
       - name: Verificar que responde
         env:
           PUBLIC_URL: ${{ vars.PUBLIC_URL }}

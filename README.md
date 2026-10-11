@@ -33,7 +33,7 @@ fusionarse en `main` se despliega solo.
 | --- | --- |
 | API (`apps/api`) | NestJS 11, Kysely + PostgreSQL 16, migraciones SQL, `otplib`, `nodemailer` |
 | Web (`apps/web`) | Next.js 16 (App Router), React 19, Tailwind v4, [`@demogar/mola-ui`](https://demogar.github.io/molaui/), Leaflet + OpenStreetMap |
-| Infra | Docker, GitHub Actions → GHCR → Coolify, respaldos cifrados con `age` |
+| Infra | Docker, GitHub Actions → GHCR → VPS (Docker Compose + Caddy), respaldos cifrados con `age` |
 
 ## Correr en local
 

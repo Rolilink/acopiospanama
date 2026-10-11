@@ -1,11 +1,12 @@
-# Acopio Panamá — producción con Docker Compose (pensado para Coolify).
+# Acopio Panamá — producción con Docker Compose en un VPS.
 #
 # Las imágenes se construyen en GitHub Actions y se publican en GHCR: el servidor NO compila
 # (así convive con otras apps en un VPS pequeño). Para construir localmente:
 #   docker compose -f docker-compose.yml -f docker-compose.build.yml up --build
 #
-# Solo `web` recibe tráfico (asigna el dominio a web:3000 en Coolify). API y base de datos son internas.
-# Variables: ver deploy/.env.example. Los límites de CPU/memoria evitan que un pico afecte a otras apps.
+# Solo `caddy` publica puertos (80/443), termina TLS y reenvía todo a `web:3000`.
+# API y base de datos son internas. Variables: ver deploy/.env.example.
+# Los límites de CPU/memoria evitan que un pico afecte a otras apps del servidor.
 
 x-hardening: &hardening
   restart: unless-stopped
@@ -91,5 +92,23 @@ services:
     mem_limit: 128m
     security_opt: ['no-new-privileges:true']
 
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on: [web]
+    ports: ['80:80', '443:443', '443:443/udp']
+    environment:
+      DOMAIN: ${DOMAIN:?Define DOMAIN (el dominio sin https://)}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    logging:
+      driver: json-file
+      options: { max-size: '10m', max-file: '3' }
+    mem_limit: 128m
+
 volumes:
   pgdata:
+  caddy_data:
+  caddy_config:
