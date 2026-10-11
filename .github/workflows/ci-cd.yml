@@ -76,7 +76,7 @@ jobs:
       - run: npm audit --audit-level=high
 
   images:
-    name: Imágenes Docker
+    name: Imágenes Docker (${{ matrix.name }})
     needs: [api, web, audit]
     runs-on: ubuntu-latest
     timeout-minutes: 30

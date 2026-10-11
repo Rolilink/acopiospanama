@@ -14,15 +14,28 @@ El servidor nunca compila: solo descarga imágenes. Por eso convive bien con otr
 
 ### 1. GitHub
 
+Todo esto ya está aplicado en `demogar/acopiospanama`; se documenta para poder reproducirlo.
+
 1. Repo público `demogar/acopiospanama`.
-2. *Settings › Branches › Add rule* para `main`:
-   - Require a pull request before merging, con 1 aprobación y revisión de Code Owners.
-   - Require status checks to pass: `API · tipos y pruebas`, `Web · tipos y build`, `Dependencias`,
-     `Imágenes Docker (api)`, `Imágenes Docker (web)` e `Imágenes Docker (backup)`.
-   - Do not allow bypassing the above settings (opcional).
-3. *Settings › Actions › General*: «Require approval for all outside collaborators» en los workflows de forks.
-4. *Settings › Environments › production*: opcionalmente añade revisores obligatorios para aprobar cada despliegue.
-5. Tras el primer `push` a `main`, en *Packages* marca como **públicas** las imágenes
+2. *Settings › Rules › Rulesets*: regla «Proteger main» sobre la rama por defecto:
+   - Bloquea borrar la rama y los `push --force`.
+   - Exige pull request con 1 aprobación, revisión de Code Owners, hilos resueltos y descarta aprobaciones
+     obsoletas al subir cambios.
+   - Exige que pasen los checks `API · tipos y pruebas`, `Web · tipos y build`, `Dependencias`,
+     `Imágenes Docker (api)`, `Imágenes Docker (web)`, `Imágenes Docker (backup)` y `CodeQL`.
+     Los nombres de los jobs en `.github/workflows/` deben mantenerse iguales a esta lista.
+   - Los administradores pueden saltarse la regla. Es necesario mientras haya un solo mantenedor (no puede
+     aprobar su propio PR). Cuando haya dos o más, quita el *bypass* para que nadie fusione sin revisión.
+3. *Settings › Actions › General*:
+   - Solo se permiten acciones de GitHub y de creadores verificados (`actions/*`, `github/*`, `docker/*`).
+   - Permisos del `GITHUB_TOKEN` de solo lectura por defecto; cada job pide lo que necesita.
+   - «Require approval for all external contributors» en los workflows de forks: ningún PR externo ejecuta
+     CI hasta que un mantenedor lo apruebe.
+4. *Settings › Environments › production*: solo la rama `main` puede desplegar (así ninguna otra rama ve los
+   secretos de Coolify). Opcionalmente añade revisores obligatorios para aprobar cada despliegue a mano.
+5. *Settings › Code security*: escaneo de secretos con *push protection*, alertas de Dependabot y
+   actualizaciones de seguridad automáticas. `.github/dependabot.yml` actualiza npm, acciones y Docker cada semana.
+6. Tras el primer `push` a `main`, en *Packages* marca como **públicas** las imágenes
    `acopiospanama-api`, `acopiospanama-web` y `acopiospanama-backup`. Así Coolify las descarga sin credenciales.
    Si prefieres mantenerlas privadas, configura en Coolify un registro con un token de solo lectura.
 
