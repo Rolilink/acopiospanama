@@ -22,13 +22,14 @@ Todo esto ya está aplicado en `demogar/acopiospanama`; se documenta para poder 
 1. Repo público `demogar/acopiospanama`.
 2. *Settings › Rules › Rulesets*: regla «Proteger main» sobre la rama por defecto:
    - Bloquea borrar la rama y los `push --force`.
-   - Exige pull request con 1 aprobación, revisión de Code Owners, hilos resueltos y descarta aprobaciones
-     obsoletas al subir cambios.
+   - Exige pull request con los hilos resueltos. Mientras haya un solo mantenedor no exige aprobaciones
+     (nadie puede aprobar su propio PR). Cuando haya dos o más, sube a 1 aprobación y activa la revisión
+     de Code Owners en la regla.
    - Exige que pasen los checks `API · tipos y pruebas`, `Web · tipos y build`, `Dependencias`,
      `Imágenes Docker (api)`, `Imágenes Docker (web)`, `Imágenes Docker (backup)` y `CodeQL`.
      Los nombres de los jobs en `.github/workflows/` deben mantenerse iguales a esta lista.
-   - Los administradores pueden saltarse la regla. Es necesario mientras haya un solo mantenedor (no puede
-     aprobar su propio PR). Cuando haya dos o más, quita el *bypass* para que nadie fusione sin revisión.
+   - Los administradores pueden saltarse la regla en caso de emergencia. Cuando haya dos o más mantenedores,
+     quita el *bypass* para que nadie fusione sin revisión.
 3. *Settings › Actions › General*:
    - Solo se permiten acciones de GitHub y de creadores verificados (`actions/*`, `github/*`, `docker/*`).
    - Permisos del `GITHUB_TOKEN` de solo lectura por defecto; cada job pide lo que necesita.
