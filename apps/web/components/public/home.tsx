@@ -265,9 +265,7 @@ export function PublicHome({
               {resultTitle}
             </h1>
             <p className="text-sm text-ink-2">
-              {origin
-                ? 'Ordenados por distancia. Tu ubicación no sale de tu teléfono.'
-                : 'Urgentes primero, luego los confirmados más recientemente.'}{' '}
+              {origin ? 'Los más cercanos primero. ' : ''}
               <strong className="text-ink">Confirma con el centro antes de ir.</strong>
             </p>
           </div>
@@ -282,27 +280,24 @@ export function PublicHome({
           </Button>
         </div>
 
-        {/* Aviso corto y plano: un campo dorado con una marca, en una línea. */}
-        <aside
-          aria-label="Aviso"
-          className="flex items-start gap-2 bg-oro-soft px-4 py-3 text-sm leading-relaxed text-ink-2"
-        >
-          <span aria-hidden="true" className="mt-1.5 inline-block size-2.5 shrink-0 bg-warn" />
+        {/* Aviso en una línea: lo que hay que recordar y adónde ir si pasa. */}
+        <aside aria-label="Aviso" className="flex items-center gap-2 bg-oro-soft px-4 py-2.5 text-sm text-ink-2">
+          <span aria-hidden="true" className="inline-block size-2.5 shrink-0 bg-warn" />
           <p>
-            <strong className="text-ink">Nadie aquí te pedirá dinero.</strong> Si un centro pide transferencias o Yappy,
-            repórtalo desde su ficha.{' '}
-            <Link href="/como-funciona#juega-vivo" className="font-bold text-ink">
-              Cómo evitar el «juega vivo»
+            <strong className="text-ink">Aquí nadie pide dinero.</strong>{' '}
+            <Link href="/como-funciona#juega-vivo" className="font-bold whitespace-nowrap text-ink">
+              Evita el «juega vivo»
             </Link>
           </p>
         </aside>
 
         <div className="grid gap-4">
-          {/* En el teléfono las provincias van en una fila deslizable en vez de ocupar media pantalla. */}
+          {/* En el teléfono las provincias van en una fila deslizable en vez de ocupar media pantalla. El aire
+              arriba y abajo evita que el desplazamiento recorte el borde (una sombra) y el anillo de foco. */}
           <ChipGroup
             legend="Provincia o comarca"
             hideLegend
-            className="max-md:[&>div]:-mx-4 max-md:[&>div]:flex-nowrap max-md:[&>div]:overflow-x-auto max-md:[&>div]:px-4 max-md:[&>div]:pb-1 sm:max-md:[&>div]:-mx-6 sm:max-md:[&>div]:px-6 max-md:[&>div>*]:shrink-0"
+            className="max-md:[&>div]:-mx-4 max-md:[&>div]:flex-nowrap max-md:[&>div]:overflow-x-auto max-md:[&>div]:px-4 max-md:[&>div]:py-2 sm:max-md:[&>div]:-mx-6 sm:max-md:[&>div]:px-6 max-md:[&>div>*]:shrink-0"
           >
             <Chip
               type="radio"
@@ -409,12 +404,7 @@ export function PublicHome({
               {geo.message}
             </p>
           )}
-          {onlyOpen && (
-            <p className="text-sm text-ink-2">
-              «Abierto ahora» usa el horario que publicó cada centro (hora de Panamá). Los que no publicaron horario
-              quedan fuera.
-            </p>
-          )}
+          {onlyOpen && <p className="text-sm text-ink-2">Solo centros con horario publicado.</p>}
         </div>
 
         {/* Con el mapa abierto, en pantallas anchas va fijo a la derecha de la lista. «sticky» crea un contexto
