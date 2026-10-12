@@ -1,0 +1,1401 @@
+[
+  {
+    "name": "Parque Metropolitano de David (PAMEDA)",
+    "centerType": "ACOPIO",
+    "organizerType": "MUNICIPIO",
+    "organizerName": "Alcaldía de David",
+    "province": "CHIRIQUI",
+    "district": "David",
+    "community": "",
+    "address": "Parque Metropolitano de David (PAMEDA)",
+    "lat": 8.4397023,
+    "lng": -82.436708,
+    "schedule": {
+      "SUN": {
+        "open": "08:00",
+        "close": "17:00"
+      }
+    },
+    "hoursNote": "Este domingo 11 de octubre, de 8:00 a.m. a 5:00 p.m.",
+    "notes": "El centro de acopio de la Alcaldía de David se traslada a PAMEDA para recibir alimentos secos para los afectados por el sismo.",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos secos"
+      }
+    ],
+    "source": {
+      "title": "@RadioChiriqui en X",
+      "url": "https://x.com/RadioChiriqui/status/2109343299827888359",
+      "date": "2026-10-11"
+    }
+  },
+  {
+    "name": "Centro de Acopio Gobernación de Chiriquí",
+    "centerType": "ACOPIO",
+    "organizerType": "GOBIERNO",
+    "organizerName": "Gobernación de Chiriquí",
+    "province": "CHIRIQUI",
+    "district": "David",
+    "community": "",
+    "address": "Sede de la Gobernación de Chiriquí",
+    "lat": 8.4296194,
+    "lng": -82.4299874,
+    "schedule": {
+      "MON": {
+        "open": "08:00",
+        "close": "18:00"
+      },
+      "SUN": {
+        "open": "08:00",
+        "close": "18:00"
+      }
+    },
+    "hoursNote": "Hoy domingo 11 de octubre hasta las 6:00 p.m.",
+    "notes": "La Gobernación de Chiriquí habilitó este centro para recibir donaciones para las familias afectadas por el sismo bajo el lema 'Chiriquí Solidario, Panamá Unido'.",
+    "needs": [
+      {
+        "item": "FIRST_AID",
+        "level": "NEEDED",
+        "note": "Medicinas e implementos de primeros auxilios"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Productos de limpieza"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Artículos de higiene personal"
+      },
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos no perecederos"
+      },
+      {
+        "item": "BABY",
+        "level": "NEEDED",
+        "note": "Pañales y artículos para bebés"
+      },
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Agua embotellada"
+      }
+    ],
+    "source": {
+      "title": "@RadioChiriqui en X",
+      "url": "https://x.com/RadioChiriqui/status/2109397236157157810",
+      "date": "2026-10-11"
+    }
+  },
+  {
+    "name": "Sede MOCA Vía España",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "MOCA",
+    "province": "PANAMA",
+    "district": "PANAMA",
+    "community": "",
+    "address": "PH Domino, planta baja, Vía España",
+    "lat": 8.9872123,
+    "lng": -79.5231464,
+    "schedule": {
+      "MON": {
+        "open": "08:00",
+        "close": "14:00"
+      },
+      "TUE": {
+        "open": "08:00",
+        "close": "14:00"
+      },
+      "WED": {
+        "open": "08:00",
+        "close": "14:00"
+      },
+      "THU": {
+        "open": "08:00",
+        "close": "14:00"
+      },
+      "FRI": {
+        "open": "08:00",
+        "close": "14:00"
+      },
+      "SAT": {
+        "open": "08:00",
+        "close": "14:00"
+      },
+      "SUN": {
+        "open": "08:00",
+        "close": "14:00"
+      }
+    },
+    "hoursNote": "8:00 A.M. - 2:00 P.M.",
+    "notes": "Voluntarios de MOCA recolectando donaciones para familias afectadas por el terremoto.",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos secos"
+      },
+      {
+        "item": "CLOTHES",
+        "level": "NEEDED",
+        "note": "Ropa en buen estado"
+      },
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Agua embotellada"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109142518088520103",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Club de Los Españoles de la Barriada Barbarena",
+    "centerType": "ACOPIO",
+    "organizerType": "IGLESIA",
+    "organizerName": "Padre Raúl Rodríguez",
+    "province": "VERAGUAS",
+    "district": "Santiago",
+    "community": "Barriada Barbarena",
+    "address": "Club de Los Españoles de la Barriada Barbarena, Santiago",
+    "lat": 8.0933045,
+    "lng": -80.9586181,
+    "schedule": {},
+    "hoursNote": "Activo el 11 de octubre de 2026 (mañana). No se especifica horario de cierre.",
+    "notes": "Centro de acopio coordinado por el Padre Raúl Rodríguez para recibir donaciones destinadas a los afectados por el terremoto en Soná. Ubicado en Santiago, Veraguas.",
+    "needs": [
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Se observan paquetes de agua embotellada en la imagen"
+      },
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Cajas de donaciones visibles"
+      },
+      {
+        "item": "BEDDING",
+        "level": "NEEDED",
+        "note": "Se observan bolsas y bultos que parecen ropa o cobijas"
+      },
+      {
+        "item": "VOLUNTEERS",
+        "level": "NEEDED",
+        "note": "El texto indica 'Sigan apoyando que hace falta mucho'"
+      }
+    ],
+    "source": {
+      "title": "@AlvaroAlvaradoC en X",
+      "url": "https://x.com/AlvaroAlvaradoC/status/2109386768747229643",
+      "date": "2026-10-11"
+    }
+  },
+  {
+    "name": "Parque Libertador",
+    "centerType": "ACOPIO",
+    "organizerType": "MUNICIPIO",
+    "organizerName": "Municipio de La Chorrera",
+    "province": "PANAMA_OESTE",
+    "district": "La Chorrera",
+    "community": "",
+    "address": "Parque Libertador, La Chorrera",
+    "lat": 8.8761995,
+    "lng": -79.7868566,
+    "schedule": {
+      "SAT": {
+        "open": "08:00",
+        "close": "17:00"
+      },
+      "SUN": {
+        "open": "08:00",
+        "close": "17:00"
+      }
+    },
+    "hoursNote": "Sábado 10 y Domingo 11 de octubre, de 8:00 A.M. a 5:00 P.M.",
+    "notes": "Centro de acopio para apoyar a las provincias centrales afectadas por el terremoto. El afiche indica explícitamente 'No ropa'.",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Comida enlatada"
+      },
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Agua"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Artículos de uso personal y limpieza"
+      },
+      {
+        "item": "HOT_MEALS",
+        "level": "NEEDED",
+        "note": "Hidratación y alimentación para el equipo de trabajo"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140226568323230",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Centro de Acopio AFUTPA",
+    "centerType": "ACOPIO",
+    "organizerType": "OTRO",
+    "organizerName": "Asociación de Futbolistas Profesionales de Panamá (AFUTPA)",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Ciudad de Panamá",
+    "address": "Oficinas de AFUTPA, Plaza Carolina, Local 11, Ciudad de Panamá (detrás del antiguo Banistmo)",
+    "lat": 9.0287403,
+    "lng": -79.4776459,
+    "schedule": {
+      "MON": {
+        "open": "09:00",
+        "close": "16:00"
+      },
+      "TUE": {
+        "open": "09:00",
+        "close": "16:00"
+      },
+      "WED": {
+        "open": "09:00",
+        "close": "16:00"
+      },
+      "THU": {
+        "open": "09:00",
+        "close": "16:00"
+      }
+    },
+    "hoursNote": "Del 12 al 15 de octubre de 2026, de 9:00 a.m. a 4:00 p.m.",
+    "notes": "Centro de acopio para recibir donaciones destinadas a las familias del interior afectadas por el terremoto.",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos no perecederos: enlatados, arroz, pasta, avena, galletas, café, té."
+      },
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Agua embotellada."
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Jabones, cepillos, pasta dental, toallas sanitarias, pañales, papel higiénico."
+      },
+      {
+        "item": "BABY",
+        "level": "NEEDED",
+        "note": "Leche en polvo, fórmulas de bebé, pañales y pampers."
+      },
+      {
+        "item": "FIRST_AID",
+        "level": "NEEDED",
+        "note": "Gasas, vendas, curitas, guantes, alcohol, solución salina, mascarillas, botiquines."
+      },
+      {
+        "item": "PET_FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos para mascotas."
+      },
+      {
+        "item": "CLOTHES",
+        "level": "ENOUGH",
+        "note": "No se estará recibiendo ropa por el momento."
+      }
+    ],
+    "source": {
+      "title": "@AFUTPA en X",
+      "url": "https://x.com/AFUTPA/status/2109078694832508935",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 San Miguelito",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "San Miguelito",
+    "community": "Victoriano Lorenzo",
+    "address": "Carretera Transístmica, Monte Oscuro, San Miguelito",
+    "lat": 9.0300178,
+    "lng": -79.5057678,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Tumba Muerto",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Bethania",
+    "address": "Vía Ricardo J. Alfaro (Tumba Muerto), Los Ángeles",
+    "lat": 9.0001003,
+    "lng": -79.5330414,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Brisas del Golf",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "San Miguelito",
+    "community": "Rufina Alfaro",
+    "address": "Calle 29 Norte, Brisas del Golf",
+    "lat": 9.0693301,
+    "lng": -79.4533453,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Vía Porras",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Bella Vista",
+    "address": "Avenida Belisario Porras y Calle Alajuela, Obarrio",
+    "lat": 8.9922399,
+    "lng": -79.5174942,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 San Francisco",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "San Francisco",
+    "address": "Calle 78 Este, Coco del Mar",
+    "lat": 8.9921879,
+    "lng": -79.5001858,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Condado del Rey",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Ancón",
+    "address": "Avenida Condado del Rey (Vía Principal), Condado del Rey",
+    "lat": 9.0377436,
+    "lng": -79.5294113,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 El Dorado",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Bethania",
+    "address": "Avenida 17 B Norte, Las Mercedes, El Dorado",
+    "lat": 9.0078809,
+    "lng": -79.5353756,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Costa del Este",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Juan Díaz",
+    "address": "Avenida Costa del Sol, Costa del Este",
+    "lat": 9.0162394,
+    "lng": -79.4654858,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Chanis",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Parque Lefevre",
+    "address": "Avenida Cincuentenario, Chanis",
+    "lat": 9.0177493,
+    "lng": -79.4842483,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 La Cabima",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Alcalde Díaz",
+    "address": "Vía Transístmica, Urb. Montserrat, La Cabima",
+    "lat": 9.1064719,
+    "lng": -79.5360804,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Albrook Mall",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Ancón",
+    "address": "Albrook Mall, Calle Dr. Eligio Salas, Albrook",
+    "lat": 8.9771544,
+    "lng": -79.5508163,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Los Andes",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "San Miguelito",
+    "community": "Belisario Porras",
+    "address": "Vía Transístmica, Ojo de Agua, Los Andes",
+    "lat": 9.0487809,
+    "lng": -79.5061846,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:  (búsqueda 'super 99 los andes'; el enlace Waze del localizador apunta por error a La Doña)",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 La Doña",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Tocumen",
+    "address": "Centro Comercial La Doña, Carretera Panamericana, Sector 3, Tocumen",
+    "lat": 9.1036077,
+    "lng": -79.3692178,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa: OpenStreetMap 'Centro Comercial La Doña' (el localizador solo enlaza una búsqueda de Google Maps)",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Río Abajo",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Río Abajo",
+    "address": "Vía España, Carmen Cecilia, Río Abajo",
+    "lat": 9.0130129,
+    "lng": -79.5001678,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Plaza Tocumen",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Don Bosco",
+    "address": "Plaza Tocumen, Vía Tocumen, Las Acacias",
+    "lat": 9.0610728,
+    "lng": -79.4225582,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Las Mañanitas",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Las Mañanitas",
+    "address": "Calle 16B, Barriada Los Nogales, Las Mañanitas",
+    "lat": 9.0808978,
+    "lng": -79.408945,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Los Pueblos",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Juan Díaz",
+    "address": "Avenida Domingo Díaz, Los Pueblos",
+    "lat": 9.0465286,
+    "lng": -79.4492639,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Villa Zaita",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Ernesto Córdoba Campos",
+    "address": "Villa Zaita Mall, Calle 4ta, Villa Zaita",
+    "lat": 9.0750312,
+    "lng": -79.5234186,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Megamall",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "24 de Diciembre",
+    "address": "Megamall, Pradera Azul, Nuevo Tocumen",
+    "lat": 9.0987898,
+    "lng": -79.3510869,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa: OpenStreetMap 'Megamall' (el enlace de mapa del localizador apunta por error a Las Mañanitas)",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Bethania",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Bethania",
+    "address": "Calle 71 Oeste, Bethania",
+    "lat": 9.0115668,
+    "lng": -79.5253081,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Los Andes Mall",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "San Miguelito",
+    "community": "Belisario Porras",
+    "address": "Los Andes Mall, Carretera Transístmica, Tinajita",
+    "lat": 9.0518717,
+    "lng": -79.5091395,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 El Faro",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Juan Díaz",
+    "address": "Avenida Domingo Díaz, El Faro",
+    "lat": 9.0495854,
+    "lng": -79.4550739,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Pedregal",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Pedregal",
+    "address": "Avenida Domingo Díaz, Pedregal",
+    "lat": 9.0575872,
+    "lng": -79.4322551,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Balboa",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Parque Lefevre",
+    "address": "Calle 107 Este, Chanis",
+    "lat": 9.0235177,
+    "lng": -79.4866541,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Vista Hermosa",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Pueblo Nuevo",
+    "address": "Avenida Fernández de Córdoba, Vista Hermosa",
+    "lat": 8.9988807,
+    "lng": -79.5197491,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Calidonia",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Calidonia",
+    "address": "Avenida Central, Calidonia",
+    "lat": 8.9663564,
+    "lng": -79.5401939,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Transístmica",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Bethania",
+    "address": "Avenida Simón Bolívar (Transístmica), Bulevar Saúl Esses, Los Ángeles",
+    "lat": 8.9937226,
+    "lng": -79.5291148,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 San Lorenzo",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Alcalde Díaz",
+    "address": "Vía Caimitillo - La Cabima, San Lorenzo",
+    "lat": 9.1308003,
+    "lng": -79.5337952,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa:",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  },
+  {
+    "name": "Super 99 Montemadero",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Super 99",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "Las Garzas",
+    "address": "Montemadero, Las Garzas",
+    "lat": 9.1039375,
+    "lng": -79.2703125,
+    "schedule": {},
+    "hoursNote": "No especifica horario en el afiche",
+    "notes": "Campaña 'Hoy nos unimos por Panamá'. Reciben donaciones en todas las sucursales de Ciudad de Panamá.\nDirección de la sucursal: localizador oficial  mapa: OpenStreetMap 'PH Montemadero, Las Garzas' (el enlace de mapa del localizador es el mismo de San Lorenzo; ubicación por confirmar)",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      },
+      {
+        "item": "CLEANING",
+        "level": "NEEDED",
+        "note": "Donaciones generales para apoyar a familias afectadas"
+      }
+    ],
+    "source": {
+      "title": "@sonomirenkirin en X",
+      "url": "https://x.com/sonomirenkirin/status/2109140122998374849",
+      "date": "2026-10-10"
+    }
+  }
+]
