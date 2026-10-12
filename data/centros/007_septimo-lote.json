@@ -1,0 +1,254 @@
+[
+  {
+    "name": "Centro de Acopio Universidad de Panamá",
+    "centerType": "ACOPIO",
+    "organizerType": "ESCUELA",
+    "organizerName": "Universidad de Panamá",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "",
+    "address": "Entrada de la Universidad de Panamá por la Facultad de Arquitectura",
+    "lat": 8.9840088,
+    "lng": -79.5321093,
+    "schedule": {
+      "MON": {
+        "open": "06:00",
+        "close": "18:00"
+      },
+      "TUE": {
+        "open": "06:00",
+        "close": "18:00"
+      }
+    },
+    "hoursNote": "Solo el lunes 12 y el martes 13 de octubre, de 6:00 a. m. a 6:00 p. m. Confirma antes de ir.",
+    "notes": "Recolección de donaciones para apoyar a las provincias centrales. Las entregas se realizarán el 14 de octubre en los centros regionales afectados.",
+    "needs": [
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Agua embotellada"
+      },
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos secos y enlatados"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Productos de higiene y limpieza"
+      },
+      {
+        "item": "FIRST_AID",
+        "level": "NEEDED",
+        "note": "Gasas, alcohol, vendas y medicamentos básicos (no vencidos)"
+      }
+    ],
+    "source": {
+      "title": "Afiche compartido en Instagram por @universidad_pma y @cde.up",
+      "date": "2026-10-11"
+    }
+  },
+  {
+    "name": "Gimnasio Municipal Régulo Sánchez",
+    "centerType": "ACOPIO",
+    "organizerType": "MUNICIPIO",
+    "organizerName": "Alcaldía de Arraiján",
+    "province": "PANAMA_OESTE",
+    "district": "Arraiján",
+    "community": "",
+    "address": "Gimnasio Municipal Régulo Sánchez, Arraiján",
+    "lat": 8.9468734,
+    "lng": -79.650079,
+    "schedule": {
+      "MON": {
+        "open": "08:00",
+        "close": "16:00"
+      },
+      "TUE": {
+        "open": "08:00",
+        "close": "16:00"
+      },
+      "WED": {
+        "open": "08:00",
+        "close": "16:00"
+      },
+      "THU": {
+        "open": "08:00",
+        "close": "16:00"
+      },
+      "FRI": {
+        "open": "08:00",
+        "close": "16:00"
+      },
+      "SAT": {
+        "open": "10:00",
+        "close": "15:00"
+      },
+      "SUN": {
+        "open": "10:00",
+        "close": "15:00"
+      }
+    },
+    "hoursNote": "Lunes a viernes: 8:00 a.m. a 4:00 p.m. Sábados y domingos: 10:00 a.m. a 3:00 p.m.",
+    "notes": "Centro de acopio municipal para recibir donaciones de alimentos y artículos de primera necesidad para afectados por el terremoto.",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos secos, productos enlatados"
+      },
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Agua embotellada"
+      }
+    ],
+    "source": {
+      "title": "@aquipasaalgotv en Instagram, @lanuevaalcaldiadearraijan en Instagram",
+      "url": "https://www.instagram.com/p/DeXPPb3SiKF/",
+      "date": "2026-10-11"
+    }
+  },
+  {
+    "name": "Hospital Aquilino Tejeira",
+    "centerType": "ACOPIO",
+    "organizerType": "GOBIERNO",
+    "organizerName": "Hospital Aquilino Tejeira",
+    "province": "COCLE",
+    "district": "Penonomé",
+    "community": "",
+    "address": "El Hospital Aquilino Tejeira",
+    "lat": 8.5133152,
+    "lng": -80.3509029,
+    "schedule": {},
+    "hoursNote": "Horario no publicado: confirma antes de ir.",
+    "notes": "Centro de acopio en Penonomé.",
+    "needs": [
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Agua"
+      },
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos enlatados y secos"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Productos de higiene personal"
+      },
+      {
+        "item": "FIRST_AID",
+        "level": "NEEDED",
+        "note": "Artículos de primeros auxilios y salud"
+      },
+      {
+        "item": "CLOTHES",
+        "level": "NEEDED",
+        "note": "Ropa limpia, seca y en buen estado"
+      },
+      {
+        "item": "BABY",
+        "level": "NEEDED",
+        "note": "Insumos para bebés, adultos mayores y personas con discapacidad"
+      },
+      {
+        "item": "VOLUNTEERS",
+        "level": "NEEDED",
+        "note": "Equipos de protección para voluntarios"
+      }
+    ],
+    "source": {
+      "title": "@metrolibre en Instagram",
+      "url": "https://www.instagram.com/p/DeXOBPdIkLF/",
+      "date": "2026-10-11"
+    }
+  },
+  {
+    "name": "Centro de Acopio Solidario Parque de Barrio Vega",
+    "centerType": "ACOPIO",
+    "organizerType": "OTRO",
+    "organizerName": "Panamá Oeste Informado",
+    "province": "PANAMA_OESTE",
+    "district": "La Chorrera",
+    "community": "Barrio Colón",
+    "address": "Parque de Barrio Vega, Barrio Colón, La Chorrera",
+    "lat": 8.882335,
+    "lng": -79.7749446,
+    "schedule": {},
+    "hoursNote": "Desde las 7:00 p. m. del 10 de octubre. Horario no publicado: confirma antes de ir.",
+    "notes": "Recolección de insumos para apoyo a centros hospitalarios del interior del país.",
+    "needs": [
+      {
+        "item": "WATER",
+        "level": "NEEDED",
+        "note": "Agua embotellada"
+      },
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Comida seca"
+      },
+      {
+        "item": "BEDDING",
+        "level": "NEEDED",
+        "note": "Mantas"
+      },
+      {
+        "item": "CLOTHES",
+        "level": "NEEDED",
+        "note": "Ropa en buen estado"
+      },
+      {
+        "item": "FIRST_AID",
+        "level": "NEEDED",
+        "note": "Insumos médicos básicos: vendas, gasas, guantes, mascarillas, alcohol"
+      }
+    ],
+    "source": {
+      "title": "@panamaoesteinformado en Instagram",
+      "url": "https://www.instagram.com/p/DeW5el8xPif/",
+      "date": "2026-10-11"
+    }
+  },
+  {
+    "name": "Restaurante Expreso Santeño",
+    "centerType": "ACOPIO",
+    "organizerType": "EMPRESA",
+    "organizerName": "Fonda & Restaurante Expreso Santeño",
+    "province": "PANAMA",
+    "district": "Panamá",
+    "community": "La Doña",
+    "address": "La Doña, Panamá (Detrás de Novey)",
+    "lat": 9.1051706,
+    "lng": -79.3719158,
+    "schedule": {},
+    "hoursNote": "Horario no publicado: confirma antes de ir.",
+    "notes": "Centro de acopio habilitado por el restaurante para recibir donaciones de alimentos, ropa, calzado y artículos de higiene para afectados por el terremoto.",
+    "needs": [
+      {
+        "item": "FOOD",
+        "level": "NEEDED",
+        "note": "Alimentos secos (arroz, frijoles, pastas, avena) y enlatados (atún, sardinas, vegetales, leche)"
+      },
+      {
+        "item": "CLOTHES",
+        "level": "NEEDED",
+        "note": "Ropa en buen estado para todas las edades y zapatos en buen estado para niños y niñas"
+      },
+      {
+        "item": "HYGIENE",
+        "level": "NEEDED",
+        "note": "Cosas de aseo: jabón, pasta dental, shampoo, papel higiénico"
+      }
+    ],
+    "source": {
+      "title": "@rest_expresosanteno en Instagram",
+      "url": "https://www.instagram.com/p/DeVH8YeNhHS/",
+      "date": "2026-10-10"
+    }
+  }
+]
